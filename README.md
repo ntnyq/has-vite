@@ -45,6 +45,7 @@ Returns a `boolean` of whether the project is using vite.
 #### cwd
 
 Type: `string`
+
 Default: `process.cwd()`
 
 ### hasViteConfig(cwd?)
@@ -54,7 +55,12 @@ Returns a `boolean` of whether the project has `vite.config.{js,cjs,mjs,ts,cts,m
 #### cwd
 
 Type: `string`
+
 Default: `process.cwd()`
+
+## TODO
+
+-   Check `vite` field of `package.json`
 
 ## License
 

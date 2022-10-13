@@ -51,7 +51,7 @@
     "coverage": "vitest --coverage",
     "lint": "eslint .",
     "prepublishOnly": "pnpm run build",
-    "publish": "bumpp && pnpm publish"
+    "release": "bumpp && pnpm publish"
   },
   "devDependencies": {
     "@ntnyq/eslint-config": "^1.0.4",
