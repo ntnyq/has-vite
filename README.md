@@ -42,17 +42,41 @@ hasVite(`bar`) // => true
 
 Returns a `boolean` of whether the project is using vite.
 
-#### cwd
+Returns `true` if one of bellow functions return `true`:
 
-Type: `string`
-
-Default: `process.cwd()`
+- `hasViteConfig`
+- `hasViteInPkg`
 
 ### hasViteConfig(cwd?)
 
 Returns a `boolean` of whether the project has `vite.config.{js,cjs,mjs,ts,cts,mts}`.
 
+### hasViteDep(cwd?)
+
+Returns a `boolean` of whether the project has `vite` in `dependencies`.
+
+### hasViteDevDep(cwd?)
+
+Returns a `boolean` of whether the project has `vite` in `devDependencies`.
+
+### hasVitePeerDep(cwd?)
+
+Returns a `boolean` of whether the project has `vite` in `peerDependencies`.
+
+### hasViteInPkg(cwd?)
+
+Returns a `boolean` of whether the project has `vite` in `dependencies | devDependencies | peerDependencies`.
+
+### readPkg(cwd?)
+
+Returns an `object` of a project's `package.json` content, returns `{}` when `package.json` not exist in `cwd`.
+
+
+## Parameters 
+
 #### cwd
+
+Current working directory.
 
 Type: `string`
 

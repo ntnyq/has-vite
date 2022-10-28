@@ -1,0 +1,14 @@
+{
+  "peerDependencies": {
+    "vite": "0.0.0"
+  },
+  "dependencies": {
+    "vite": "0.0.0"
+  },
+  "optionalDependencies": {
+    "vite": "0.0.0"
+  },
+  "devDependencies": {
+    "vite": "0.0.0"
+  }
+}
