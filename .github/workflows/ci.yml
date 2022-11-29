@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  lint:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,11 +17,13 @@ jobs:
       - uses: pnpm/action-setup@v2
 
       - run: pnpm install --frozen-lockfile
+
       - run: pnpm run lint
+      - run: pnpm run typecheck
 
   test:
     runs-on: ${{ matrix.os }}
-    needs: [lint]
+    needs: [check]
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]

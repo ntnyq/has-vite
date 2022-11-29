@@ -7,14 +7,14 @@ const VITE = `vite`
 export type PkgDepType = `dependencies` | `devDependencies` | `peerDependencies`
 
 // https://github.com/vitejs/vite/blob/main/packages/vite/src/node/constants.ts#L35
-export const configs = [
+export const configs = <const>[
   `vite.config.js`,
   `vite.config.cjs`,
   `vite.config.mjs`,
   `vite.config.ts`,
   `vite.config.cts`,
   `vite.config.mts`,
-] as const
+]
 
 export const readPkg = (cwd = process.cwd()) => {
   const pkgPath = resolve(cwd, `package.json`)
