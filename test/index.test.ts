@@ -5,7 +5,7 @@ import {
   expectTypeOf,
   it,
 } from 'vitest'
-import type { PkgDepType } from '../src'
+import type { PkgDepType } from 'has-vite'
 import {
   configs,
   createDepValidator,
@@ -16,11 +16,11 @@ import {
   hasViteInPkg,
   hasVitePeerDep,
   readPkg,
-} from '../src'
+} from 'has-vite'
 
 describe(`hasVite`, () => {
   it(`should work as expected`, () => {
-    expect(hasVite()).toBeTruthy()
+    expect(hasVite()).toBeFalsy()
 
     expect(hasVite(`test/fixtures/empty`)).toBeFalsy()
     expect(hasVite(`test/fixtures/config/none`)).toBeFalsy()
@@ -37,7 +37,7 @@ describe(`hasVite`, () => {
 
 describe(`hasViteConfig`, () => {
   it(`should work as expected`, () => {
-    expect(hasViteConfig()).toBeTruthy()
+    expect(hasViteConfig()).toBeFalsy()
 
     expect(hasViteConfig(`test/fixtures/config/none`)).toBeFalsy()
 

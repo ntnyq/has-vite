@@ -11,7 +11,12 @@
     "strictNullChecks": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true
+    "skipDefaultLibCheck": true,
+    "paths": {
+      "has-vite": [
+        "./src/index.ts"
+      ]
+    }
   },
   "include": [
     "src",
