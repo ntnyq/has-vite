@@ -32,9 +32,9 @@ $ pnpm add has-vite
 ```js
 import { hasVite } from 'has-vite'
 
-hasVite(`foo`) // => false
+hasVite('foo') // => false
 
-hasVite(`bar`) // => true
+hasVite('bar') // => true
 ```
 
 ## API

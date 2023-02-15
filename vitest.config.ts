@@ -5,18 +5,18 @@ export default defineConfig({
   test: {
     coverage: {
       reporter: [
-        `lcov`,
-        `html`,
-        `json`,
-        `clover`,
-        `text`,
+        'lcov',
+        'html',
+        'json',
+        'clover',
+        'text',
       ],
     },
   },
 
   resolve: {
     alias: {
-      'has-vite': fileURLToPath(new URL(`./src/index.ts`, import.meta.url)),
+      'has-vite': fileURLToPath(new URL('./src/index.ts', import.meta.url)),
     },
   },
 })

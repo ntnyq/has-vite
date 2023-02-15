@@ -5,24 +5,24 @@ import { existsSync, readFileSync } from 'node:fs'
 /**
  * checked package name
  */
-const VITE = `vite`
+const VITE = 'vite'
 
 /**
  * package json filed for `createDepValidator`
  */
-export type PkgDepType = `dependencies` | `devDependencies` | `peerDependencies`
+export type PkgDepType = 'dependencies' | 'devDependencies' | 'peerDependencies'
 
 /**
  * vite supported config files
  * @see https://github.com/vitejs/vite/blob/main/packages/vite/src/node/constants.ts
  */
 export const configs = <const>[
-  `vite.config.js`,
-  `vite.config.cjs`,
-  `vite.config.mjs`,
-  `vite.config.ts`,
-  `vite.config.cts`,
-  `vite.config.mts`,
+  'vite.config.js',
+  'vite.config.cjs',
+  'vite.config.mjs',
+  'vite.config.ts',
+  'vite.config.cts',
+  'vite.config.mts',
 ]
 
 /**
@@ -31,9 +31,9 @@ export const configs = <const>[
  * @returns package object, `{}` if not exist
  */
 export const readPkg = (cwd = process.cwd()) => {
-  const pkgPath = resolve(cwd, `package.json`)
+  const pkgPath = resolve(cwd, 'package.json')
   if (!existsSync(pkgPath)) return {}
-  return JSON.parse(readFileSync(pkgPath, `utf-8`))
+  return JSON.parse(readFileSync(pkgPath, 'utf-8'))
 }
 
 /**
@@ -52,21 +52,21 @@ export const createDepValidator = (key: PkgDepType) => (cwd = process.cwd()) => 
  * @param cwd current working directory
  * @returns `true` if includes
  */
-export const hasViteDep = createDepValidator(`dependencies`)
+export const hasViteDep = createDepValidator('dependencies')
 
 /**
  * check if `devDependencies` includes `vite` in package.json
  * @param cwd current working directory
  * @returns `true` if includes
  */
-export const hasViteDevDep = createDepValidator(`devDependencies`)
+export const hasViteDevDep = createDepValidator('devDependencies')
 
 /**
  * check if `peerDependencies` includes `vite` in package.json
  * @param cwd current working directory
  * @returns `true` if includes
  */
-export const hasVitePeerDep = createDepValidator(`peerDependencies`)
+export const hasVitePeerDep = createDepValidator('peerDependencies')
 
 /**
  * check if `dependencies`, `devDependencies`, or `peerDependencies` includes `vite` in package.json
