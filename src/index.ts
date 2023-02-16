@@ -37,14 +37,14 @@ export const readPkg = (cwd = process.cwd()) => {
 }
 
 /**
- * Create a validator to check if `vite` is included in given `key` of package.json
- * @param key package.json field
+ * Create a validator to check if `vite` is included in given type of deps of package.json
+ * @param type type of dep
  * @returns a validator
  */
-export const createDepValidator = (key: PkgDepType) => (cwd = process.cwd()) => {
+export const createDepValidator = (type: PkgDepType) => (cwd = process.cwd()) => {
   const pkg = readPkg(cwd)
-  if (!pkg[key]) return false
-  return Object.keys(pkg[key]).includes(VITE)
+  if (!pkg[type]) return false
+  return Object.keys(pkg[type]).includes(VITE)
 }
 
 /**

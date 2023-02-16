@@ -35,7 +35,7 @@ describe('typecheck', () => {
     assertType<(cwd?: string) => boolean>(hasViteDevDep)
     assertType<(cwd?: string) => boolean>(hasVitePeerDep)
     assertType<(cwd?: string) => boolean>(hasViteInPkg)
-    assertType<(pkg: PkgDepType) => (cwd: string) => boolean>(createDepValidator)
+    assertType<(type: PkgDepType) => (cwd: string) => boolean>(createDepValidator)
     assertType<(cwd?: string) => any>(readPkg)
   })
 })
