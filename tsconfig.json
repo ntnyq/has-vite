@@ -2,9 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",
-    "lib": [
-      "ESNext"
-    ],
+    "lib": ["ESNext"],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
@@ -13,16 +11,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "paths": {
-      "has-vite": [
-        "./src/index.ts"
-      ]
+      "has-vite": ["./src/index.ts"]
     }
   },
-  "include": [
-    "src",
-    "test"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src", "test"],
+  "exclude": ["node_modules"]
 }

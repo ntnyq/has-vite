@@ -73,9 +73,8 @@ export const hasVitePeerDep = createDepValidator('peerDependencies')
  * @param cwd current working directory
  * @returns `true` if includes
  */
-export const hasViteInPkg = (cwd = process.cwd()) => hasViteDep(cwd)
-|| hasViteDevDep(cwd)
-|| hasVitePeerDep(cwd)
+export const hasViteInPkg = (cwd = process.cwd()) =>
+  hasViteDep(cwd) || hasViteDevDep(cwd) || hasVitePeerDep(cwd)
 
 /**
  * check if `vite.config.{js,ts,cjs,cts,mjs,mts}` exists in `cwd`

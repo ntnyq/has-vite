@@ -10,12 +10,22 @@
 
 ## Install
 
-```shell
-$ npm install has-vite
-# or
-$ yarn add has-vite
-# or
-$ pnpm add has-vite
+**npm**:
+
+```sh
+npm install has-vite
+```
+
+**yarn**
+
+```sh
+yarn add has-vite
+```
+
+**pnpm**
+
+```sh
+pnpm add has-vite
 ```
 
 ## Usage
@@ -72,8 +82,7 @@ Returns a `boolean` of whether the project has `vite` in `dependencies | devDepe
 
 Returns an `object` of a project's `package.json` content, returns `{}` when `package.json` not exist in `cwd`.
 
-
-## Parameters 
+## Parameters
 
 #### cwd
 
@@ -85,7 +94,7 @@ Default: `process.cwd()`
 
 ## TODO
 
--   Check `vite` field of `package.json`
+- Check `vite` field of `package.json`
 
 ## License
 
