@@ -41,11 +41,13 @@ export const readPkg = (cwd = process.cwd()) => {
  * @param type type of dep
  * @returns a validator
  */
-export const createDepValidator = (type: PkgDepType) => (cwd = process.cwd()) => {
-  const pkg = readPkg(cwd)
-  if (!pkg[type]) return false
-  return Object.keys(pkg[type]).includes(VITE)
-}
+export const createDepValidator =
+  (type: PkgDepType) =>
+  (cwd = process.cwd()) => {
+    const pkg = readPkg(cwd)
+    if (!pkg[type]) return false
+    return Object.keys(pkg[type]).includes(VITE)
+  }
 
 /**
  * check if `dependencies` includes `vite` in package.json

@@ -92,10 +92,6 @@ Type: `string`
 
 Default: `process.cwd()`
 
-## TODO
-
-- Check `vite` field of `package.json`
-
 ## License
 
 [MIT](./LICENSE) License © 2022-PRESENT [ntnyq](https://github.com/ntnyq)

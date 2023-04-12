@@ -1,9 +1,4 @@
-import {
-  assertType,
-  describe,
-  expectTypeOf,
-  it,
-} from 'vitest'
+import { assertType, describe, expectTypeOf, it } from 'vitest'
 import {
   createDepValidator,
   hasVite,

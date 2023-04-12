@@ -1,7 +1,7 @@
 {
   "name": "has-vite",
   "version": "0.0.4",
-  "packageManager": "pnpm@7.29.1",
+  "packageManager": "pnpm@8.2.0",
   "description": "Check if a project is using vite",
   "keywords": [
     "has-vite",
@@ -54,15 +54,18 @@
     "typecheck": "vitest typecheck"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^1.4.2",
-    "@types/node": "^18.15.0",
-    "@vitest/coverage-c8": "^0.29.2",
-    "bumpp": "^9.0.0",
-    "eslint": "^8.36.0",
+    "@ntnyq/eslint-config": "^1.6.1",
+    "@ntnyq/prettier-config": "^1.6.1",
+    "@types/node": "^18.15.11",
+    "@vitest/coverage-c8": "^0.30.1",
+    "bumpp": "^9.1.0",
+    "eslint": "^8.38.0",
     "npm-run-all": "^4.1.5",
-    "pnpm": "^7.29.1",
-    "typescript": "^4.9.5",
-    "unbuild": "^1.1.2",
-    "vitest": "^0.29.2"
-  }
+    "pnpm": "^8.2.0",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.4",
+    "unbuild": "^1.2.0",
+    "vitest": "^0.30.1"
+  },
+  "prettier": "@ntnyq/prettier-config"
 }
