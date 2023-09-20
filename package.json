@@ -1,6 +1,6 @@
 {
   "name": "has-vite",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "packageManager": "pnpm@8.7.6",
   "description": "Check if a project is using vite",
   "keywords": [
