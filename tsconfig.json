@@ -1,15 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2022",
     "module": "ESNext",
     "lib": ["ESNext"],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
-    "strictNullChecks": true,
-    "resolveJsonModule": true,
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
     "paths": {
       "has-vite": ["./src/index.ts"]
     }
