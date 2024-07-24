@@ -16,14 +16,14 @@ export type PkgDepType = 'dependencies' | 'devDependencies' | 'peerDependencies'
  * vite supported config files
  * @see https://github.com/vitejs/vite/blob/main/packages/vite/src/node/constants.ts
  */
-export const configs = <const>[
+export const configs = [
   'vite.config.js',
   'vite.config.cjs',
   'vite.config.mjs',
   'vite.config.ts',
   'vite.config.cts',
   'vite.config.mts',
-]
+] as const
 
 /**
  * read `package.json`
@@ -33,7 +33,7 @@ export const configs = <const>[
 export const readPkg = (cwd = process.cwd()) => {
   const pkgPath = resolve(cwd, 'package.json')
   if (!existsSync(pkgPath)) return {}
-  return JSON.parse(readFileSync(pkgPath, 'utf-8'))
+  return JSON.parse(readFileSync(pkgPath, 'utf-8')) as Record<string, any>
 }
 
 /**
@@ -94,7 +94,7 @@ export const hasViteConfig = (cwd = process.cwd()) =>
  * @example
  * ```
  * import { hasVite } from 'has-vite'
- * hasVite(`packages/core`) // true or false
+ * hasVite('path-to-package-json') // true or false
  * ```
  */
 export const hasVite = (cwd = process.cwd()) => hasViteConfig(cwd) || hasViteInPkg(cwd)
