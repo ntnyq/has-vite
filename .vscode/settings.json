@@ -13,5 +13,5 @@
     "typescriptreact"
   ],
   "editor.formatOnSave": true,
-  "cSpell.words": ["bumpp", "changelogithub", "lcov", "pnpm"]
+  "cSpell.words": ["bumpp", "changelogithub", "codecov", "lcov", "pnpm"]
 }
