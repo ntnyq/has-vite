@@ -1,3 +1,4 @@
+import { assertType, describe, expectTypeOf, it } from 'vitest'
 import {
   createDepValidator,
   hasVite,
@@ -7,9 +8,8 @@ import {
   hasViteInPkg,
   hasVitePeerDep,
   readPkg,
-} from 'has-vite'
-import { assertType, describe, expectTypeOf, it } from 'vitest'
-import type { PkgDepType } from 'has-vite'
+} from '../src'
+import type { PkgDepType } from '../src'
 
 describe('typecheck', () => {
   it('should return type match', () => {
