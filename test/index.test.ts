@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import {
   configs,
   createDepValidator,
@@ -10,6 +9,7 @@ import {
   hasVitePeerDep,
   readPkg,
 } from 'has-vite'
+import { describe, expect, it } from 'vitest'
 
 describe('hasVite', () => {
   it('should work as expected', () => {

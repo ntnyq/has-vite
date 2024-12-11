@@ -1,4 +1,3 @@
-import { assertType, describe, expectTypeOf, it } from 'vitest'
 import {
   createDepValidator,
   hasVite,
@@ -9,6 +8,7 @@ import {
   hasVitePeerDep,
   readPkg,
 } from 'has-vite'
+import { assertType, describe, expectTypeOf, it } from 'vitest'
 import type { PkgDepType } from 'has-vite'
 
 describe('typecheck', () => {

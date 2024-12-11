@@ -2,12 +2,12 @@
   "name": "has-vite",
   "type": "module",
   "version": "0.2.0",
-  "packageManager": "pnpm@9.6.0",
+  "packageManager": "pnpm@9.15.0",
   "description": "Check if a project is using vite",
   "keywords": [
+    "check",
     "has-vite",
-    "vite",
-    "check"
+    "vite"
   ],
   "license": "MIT",
   "author": {
@@ -15,10 +15,10 @@
     "email": "ntnyq13@gmail.com"
   },
   "homepage": "https://github.com/ntnyq/has-vite#readme",
+  "repository": "ntnyq/has-vite",
   "bugs": {
     "url": "https://github.com/ntnyq/has-vite/issues"
   },
-  "repository": "ntnyq/has-vite",
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -53,22 +53,21 @@
     "typecheck": "vitest --typecheck"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^2.7.0",
-    "@ntnyq/prettier-config": "^1.21.2",
-    "@types/node": "^20.14.12",
-    "@vitest/coverage-v8": "^2.0.4",
-    "bumpp": "^9.4.1",
-    "eslint": "^9.7.0",
-    "husky": "^9.1.1",
+    "@ntnyq/eslint-config": "^3.9.1",
+    "@ntnyq/prettier-config": "^1.22.0",
+    "@types/node": "^22.10.2",
+    "@vitest/coverage-v8": "^3.0.0-beta.2",
+    "bumpp": "^9.9.0",
+    "eslint": "^9.16.0",
+    "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
-    "npm-run-all2": "^6.2.2",
-    "pnpm": "^9.6.0",
-    "prettier": "^3.3.3",
-    "typescript": "^5.5.4",
-    "unbuild": "^3.0.0-rc.7",
-    "vitest": "^2.0.4"
+    "npm-run-all2": "^7.0.1",
+    "pnpm": "^9.15.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "unbuild": "^3.0.0-rc.11",
+    "vitest": "^3.0.0-beta.2"
   },
-  "prettier": "@ntnyq/prettier-config",
   "nano-staged": {
     "*.{js,ts,mjs,cjs,md,yml,yaml,json}": "eslint --fix"
   }

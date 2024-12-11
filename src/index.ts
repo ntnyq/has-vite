@@ -1,6 +1,6 @@
-import process from 'node:process'
-import { resolve } from 'node:path'
 import { existsSync, readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
+import process from 'node:process'
 
 /**
  * checked package name
@@ -27,7 +27,7 @@ export const configs = [
 
 /**
  * read `package.json`
- * @param cwd current working directory
+ * @param cwd - current working directory
  * @returns package object, `{}` if not exist
  */
 export const readPkg = (cwd = process.cwd()) => {
@@ -38,7 +38,7 @@ export const readPkg = (cwd = process.cwd()) => {
 
 /**
  * Create a validator to check if `vite` is included in given type of deps of package.json
- * @param type type of dep
+ * @param type - type of dep
  * @returns a validator
  */
 export const createDepValidator =
@@ -51,28 +51,28 @@ export const createDepValidator =
 
 /**
  * check if `dependencies` includes `vite` in package.json
- * @param cwd current working directory
+ * @param cwd - current working directory
  * @returns `true` if includes
  */
 export const hasViteDep = createDepValidator('dependencies')
 
 /**
  * check if `devDependencies` includes `vite` in package.json
- * @param cwd current working directory
+ * @param cwd - current working directory
  * @returns `true` if includes
  */
 export const hasViteDevDep = createDepValidator('devDependencies')
 
 /**
  * check if `peerDependencies` includes `vite` in package.json
- * @param cwd current working directory
+ * @param cwd - current working directory
  * @returns `true` if includes
  */
 export const hasVitePeerDep = createDepValidator('peerDependencies')
 
 /**
  * check if `dependencies`, `devDependencies`, or `peerDependencies` includes `vite` in package.json
- * @param cwd current working directory
+ * @param cwd - current working directory
  * @returns `true` if includes
  */
 export const hasViteInPkg = (cwd = process.cwd()) =>
@@ -80,7 +80,7 @@ export const hasViteInPkg = (cwd = process.cwd()) =>
 
 /**
  * check if `vite.config.{js,ts,cjs,cts,mjs,mts}` exists in `cwd`
- * @param cwd current working directory
+ * @param cwd - current working directory
  * @returns `true` if exists
  */
 export const hasViteConfig = (cwd = process.cwd()) =>
@@ -88,7 +88,7 @@ export const hasViteConfig = (cwd = process.cwd()) =>
 
 /**
  * check if `hasViteConfig` or `hasViteInPkg` return true
- * @param cwd current working directory
+ * @param cwd - current working directory
  * @returns `true` if one return true
  *
  * @example
