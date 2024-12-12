@@ -12,6 +12,8 @@ const VITE = 'vite'
  */
 export type PkgDepType = 'dependencies' | 'devDependencies' | 'peerDependencies'
 
+export type DepValidator = (cwd?: string) => boolean
+
 /**
  * vite supported config files
  * @see https://github.com/vitejs/vite/blob/main/packages/vite/src/node/constants.ts
@@ -30,7 +32,7 @@ export const configs = [
  * @param cwd - current working directory
  * @returns package object, `{}` if not exist
  */
-export const readPkg = (cwd = process.cwd()) => {
+export const readPkg = (cwd: string = process.cwd()): Record<string, any> => {
   const pkgPath = resolve(cwd, 'package.json')
   if (!existsSync(pkgPath)) return {}
   return JSON.parse(readFileSync(pkgPath, 'utf-8')) as Record<string, any>
@@ -42,8 +44,8 @@ export const readPkg = (cwd = process.cwd()) => {
  * @returns a validator
  */
 export const createDepValidator =
-  (type: PkgDepType) =>
-  (cwd = process.cwd()) => {
+  (type: PkgDepType): DepValidator =>
+  (cwd: string = process.cwd()) => {
     const pkg = readPkg(cwd)
     if (!pkg[type]) return false
     return Object.keys(pkg[type]).includes(VITE)
@@ -54,28 +56,28 @@ export const createDepValidator =
  * @param cwd - current working directory
  * @returns `true` if includes
  */
-export const hasViteDep = createDepValidator('dependencies')
+export const hasViteDep: DepValidator = createDepValidator('dependencies')
 
 /**
  * check if `devDependencies` includes `vite` in package.json
  * @param cwd - current working directory
  * @returns `true` if includes
  */
-export const hasViteDevDep = createDepValidator('devDependencies')
+export const hasViteDevDep: DepValidator = createDepValidator('devDependencies')
 
 /**
  * check if `peerDependencies` includes `vite` in package.json
  * @param cwd - current working directory
  * @returns `true` if includes
  */
-export const hasVitePeerDep = createDepValidator('peerDependencies')
+export const hasVitePeerDep: DepValidator = createDepValidator('peerDependencies')
 
 /**
  * check if `dependencies`, `devDependencies`, or `peerDependencies` includes `vite` in package.json
  * @param cwd - current working directory
  * @returns `true` if includes
  */
-export const hasViteInPkg = (cwd = process.cwd()) =>
+export const hasViteInPkg = (cwd: string = process.cwd()): boolean =>
   hasViteDep(cwd) || hasViteDevDep(cwd) || hasVitePeerDep(cwd)
 
 /**
@@ -83,7 +85,7 @@ export const hasViteInPkg = (cwd = process.cwd()) =>
  * @param cwd - current working directory
  * @returns `true` if exists
  */
-export const hasViteConfig = (cwd = process.cwd()) =>
+export const hasViteConfig = (cwd: string = process.cwd()): boolean =>
   configs.some(config => existsSync(resolve(cwd, config)))
 
 /**
@@ -97,4 +99,5 @@ export const hasViteConfig = (cwd = process.cwd()) =>
  * hasVite('path-to-package-json') // true or false
  * ```
  */
-export const hasVite = (cwd = process.cwd()) => hasViteConfig(cwd) || hasViteInPkg(cwd)
+export const hasVite = (cwd: string = process.cwd()): boolean =>
+  hasViteConfig(cwd) || hasViteInPkg(cwd)
