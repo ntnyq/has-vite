@@ -3,7 +3,6 @@
 [![CI](https://github.com/ntnyq/has-vite/workflows/CI/badge.svg)](https://github.com/ntnyq/has-vite/actions)
 [![NPM VERSION](https://img.shields.io/npm/v/has-vite.svg)](https://www.npmjs.com/package/has-vite)
 [![NPM DOWNLOADS](https://img.shields.io/npm/dy/has-vite.svg)](https://www.npmjs.com/package/has-vite)
-[![CODECOV](https://codecov.io/github/ntnyq/has-vite/branch/main/graph/badge.svg)](https://codecov.io/github/ntnyq/has-vite)
 [![LICENSE](https://img.shields.io/github/license/ntnyq/has-vite.svg)](https://github.com/ntnyq/has-vite/blob/main/LICENSE)
 
 > Check if a project is using [vite](https://vitejs.dev/)
@@ -12,19 +11,19 @@
 
 **npm**:
 
-```sh
+```shell
 npm install has-vite
 ```
 
 **yarn**
 
-```sh
+```shell
 yarn add has-vite
 ```
 
 **pnpm**
 
-```sh
+```shell
 pnpm add has-vite
 ```
 

@@ -1,3 +1,5 @@
-import { config, defineConfig } from '@ntnyq/prettier-config'
+// @ts-check
 
-export default defineConfig(config)
+import { defineConfig } from '@ntnyq/prettier-config'
+
+export default defineConfig()

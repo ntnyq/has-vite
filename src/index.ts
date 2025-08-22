@@ -12,7 +12,19 @@ const VITE = 'vite'
  */
 export type PkgDepType = 'dependencies' | 'devDependencies' | 'peerDependencies'
 
+/**
+ * Check if dependencies include vite
+ */
 export type DepValidator = (cwd?: string) => boolean
+
+/**
+ * Partial types of package.json
+ */
+export interface PackageJson {
+  dependencies?: Record<string, string>
+  devDependencies?: Record<string, string>
+  peerDependencies?: Record<string, string>
+}
 
 /**
  * vite supported config files
@@ -32,10 +44,12 @@ export const configs = [
  * @param cwd - current working directory
  * @returns package object, `{}` if not exist
  */
-export const readPkg = (cwd: string = process.cwd()): Record<string, any> => {
+export const readPkg = (cwd: string = process.cwd()): PackageJson => {
   const pkgPath = resolve(cwd, 'package.json')
-  if (!existsSync(pkgPath)) return {}
-  return JSON.parse(readFileSync(pkgPath, 'utf-8')) as Record<string, any>
+  if (!existsSync(pkgPath)) {
+    return {}
+  }
+  return JSON.parse(readFileSync(pkgPath, 'utf-8')) as PackageJson
 }
 
 /**
@@ -47,7 +61,9 @@ export const createDepValidator =
   (type: PkgDepType): DepValidator =>
   (cwd: string = process.cwd()) => {
     const pkg = readPkg(cwd)
-    if (!pkg[type]) return false
+    if (!pkg[type]) {
+      return false
+    }
     return Object.keys(pkg[type]).includes(VITE)
   }
 
@@ -70,7 +86,8 @@ export const hasViteDevDep: DepValidator = createDepValidator('devDependencies')
  * @param cwd - current working directory
  * @returns `true` if includes
  */
-export const hasVitePeerDep: DepValidator = createDepValidator('peerDependencies')
+export const hasVitePeerDep: DepValidator =
+  createDepValidator('peerDependencies')
 
 /**
  * check if `dependencies`, `devDependencies`, or `peerDependencies` includes `vite` in package.json

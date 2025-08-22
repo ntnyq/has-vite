@@ -9,7 +9,7 @@ import {
   hasVitePeerDep,
   readPkg,
 } from '../src'
-import type { PkgDepType } from '../src'
+import type { PackageJson, PkgDepType } from '../src'
 
 describe('typecheck', () => {
   it('should return type match', () => {
@@ -30,7 +30,9 @@ describe('typecheck', () => {
     assertType<(cwd?: string) => boolean>(hasViteDevDep)
     assertType<(cwd?: string) => boolean>(hasVitePeerDep)
     assertType<(cwd?: string) => boolean>(hasViteInPkg)
-    assertType<(type: PkgDepType) => (cwd: string) => boolean>(createDepValidator)
-    assertType<(cwd?: string) => any>(readPkg)
+    assertType<(type: PkgDepType) => (cwd: string) => boolean>(
+      createDepValidator,
+    )
+    assertType<(cwd?: string) => PackageJson>(readPkg)
   })
 })
